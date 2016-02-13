@@ -1,0 +1,14 @@
+le\cache\bis\services\cache\TestCache.class
+le\cache\bis\services\impl\data\SampleDataSourceForDuplicates.class
+le\cache\bis\services\index\SigleMethodSnapShot.class
+le\cache\bis\services\index\SigleMethodJoinPropertySnapShot.class
+le\cache\bis\services\index\EmptySnapshot.class
+le\cache\bis\services\impl\data\SampleDataSource.class
+le\cache\bis\services\impl\query\TestSnapshot.class
+le\common\codequality\tests\util\BaseSpringTest.class
+le\cache\bis\services\impl\data\SampleDataSourceWithLinkedEntities.class
+le\cache\bis\services\impl\data\Membership.class
+le\cache\bis\services\impl\TestConfig.class
+le\cache\bis\services\impl\data\Employee.class
+le\cache\bis\services\index\TestIndexService.class
+le\cache\bis\services\impl\TestCacheService.class
