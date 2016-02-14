@@ -5,7 +5,7 @@ Lookup your data fast and process it fast.
 
 Java version: JDK 7 or above.
 
-published : https://jitpack.io/
+published using: https://jitpack.io/
 
     <dependency>
 			<groupId>com.github.ledwinson</groupId>
