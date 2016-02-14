@@ -3,20 +3,20 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.ledwinson</groupId>
-	<artifactId>simple-nosql-cache</artifactId>
-	<version>1.0.1.RELEASE</version>
+	<artifactId>nosql-data-cache</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>simple-nosql-cache</name>
+	<name>nosql-data-cache</name>
 
-	<url>http://maven.apache.org</url>
+	<url>https://jitpack.io/#jitpack/nosql-data-cache/1.0.0</url>
 
-	<!-- <repositories>
+	<repositories>
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
-	</repositories> -->
+	</repositories>
 
 	<properties>
 		<!-- Generic properties -->
@@ -118,13 +118,6 @@
 			<artifactId>guava</artifactId>
 			<version>18.0</version>
 		</dependency>
-
-		<!-- <dependency>
-			<groupId>com.github.ledwinson</groupId>
-			<artifactId>simple-nosql-cache</artifactId>
-			<version>1.0.1.RELEASE</version>
-		</dependency> -->
-
 	</dependencies>
 
 	<build>
