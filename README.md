@@ -5,10 +5,15 @@ Lookup your data fast and process it fast.
 
 Java version: JDK 7 or above.
 
-published using: https://jitpack.io/
 
-    <dependency>
+           <dependency>
 			<groupId>com.github.ledwinson</groupId>
 			<artifactId>nosql-data-cache</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+
+# Test it before using it and see how it fits to your use case.
+  This cache mainly depedens on two things, one is the data and second is the look up queries.   
+  The data cane be loaded to cache by passing an implementation of DataSourceResolver<T>.  
+  The lookup queries can be declared in an interface exting from Snapshot interface.
+  
