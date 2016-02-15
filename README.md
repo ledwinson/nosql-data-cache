@@ -1,10 +1,17 @@
 # nosql-data-cache
-faster data look up 
+Faster data look up 
 
-Lookup your data fast and process it fast.
+Do you access data from  database frequently to acheive a business process?
+
+Do you have a large file that you have to iterate and identify some records frequently?
+
+Try this nosql-data-cache and this will simplify the look up.
+
+This API will help you to load and index the minimal data required to achive a business process based on the look up queries.  
+
+Once you done with the cache,release the cache. 
 
 Java version: JDK 7 or above.
-
 
            <dependency>
 			<groupId>com.github.ledwinson</groupId>
