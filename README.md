@@ -1,9 +1,9 @@
 # nosql-data-cache
 Faster data look up. Can be easily used in any Spring based projects.
 
-##Why should I use this? Why can't I leverage from existing cache techonologies?
+##Why should I use this? Why can't I leverage from existing cache technologies?
   
-  This API addresses a special use case. Normally the cache APIs works by caching the results of a particular query after loading the results for the first time from database. We don't want to make this queries once the business processing is started. In our case, we load the entire data initially and make the queries to this in memory cache instead to database.
+  This API addresses a special use case. Normally the cache APIs works by caching the results of a particular query after loading the results for the first time from database. We don't want to make this queries once the business processing is started. In our case, we load the entire data initially and make the queries to this in memory cache instead to database. 
 
 Do you access data from  database frequently to acheive a business process?
 
