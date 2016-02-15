@@ -23,9 +23,11 @@ Java version: JDK 7 or above.
 
 ### Test it before using it and see how it fits to your use case.
   This cache mainly depedens on two things, 
-  1) one is the data and second is the look up queries.   
-  2) The data can be loaded to cache by passing an implementation of DataSourceResolver<T>.  
-  3) The lookup queries can be declared in an interface exting from Snapshot interface. The method names must start with findBy
+  1) one is the data and 
+  2) second is the look up queries.   
+  
+  The data can be loaded to cache by passing an implementation of DataSourceResolver<T>.  
+  The lookup queries can be declared in an interface exting from Snapshot interface. The method names must start with findBy
 
 ## Here I am loading data from a CSV file convert it to member obejcts and trying to look up members based on the queries defined in test snapshot.
 
@@ -53,3 +55,40 @@ final Membership memberFromCache = snapshot.findByMemberNumberAndTfn(1234, 10);
  //release snapshot after done with it.
  snapshot.release();
 
+### TestSnapshot interface
+
+import java.util.Date;
+import java.util.List;
+
+import le.cache.bis.services.Snapshot;
+import le.cache.bis.services.impl.data.Membership;
+import le.cache.util.Property;
+public interface TestSnapshot extends Snapshot {
+
+    Membership findByMemberNumberAndTfnAndDob(@Property("memberNumber") String memberNumber, 
+            @Property("superFundGenEmprId") String tfn, @Property(value = "dob", on = "employee") Date dob);
+
+    Membership findByMemberNumberAndTfnForEmployer(@Property("memberNumber") String memberNumber,  @Property("superFundGenEmprId") String tfn);
+    
+    List<Membership> findByMemberNumberAndTfnForEmployerForDuplicates(@Property("memberNumber") String memberNumber,  @Property("superFundGenEmprId") String tfn);
+}
+
+
+## SampleDataResolver Class
+public class SampleDataSource implements DataSourceResolver<Membership>{
+
+    private final int size;
+    
+    public SampleDataSource(int size) {
+        this.size = size;
+    }
+        
+    @Override
+    public Collection<Membership> load() {
+        return getTestData();
+    }
+    
+    private Collection<Membership> getTestData() {
+        final List<Membership> members = csvUtil.getmembers();
+    }
+    }
