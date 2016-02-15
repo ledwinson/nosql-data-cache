@@ -3,6 +3,8 @@ Faster data look up. Can be easily used in any Spring based projects.
 
 Do you access data from  database frequently to acheive a business process?
 
+Did you try fine tuning your databae/jpql many times and still code is not faster?
+
 Do you have a large file that you have to iterate and identify some records frequently?
 
 Try this nosql-data-cache and this will simplify the look up.
