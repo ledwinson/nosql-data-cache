@@ -8,15 +8,37 @@
 	<packaging>jar</packaging>
 
 	<name>nosql-data-cache</name>
+	<description>An open source data cache and indexing API</description>
 
-	<url>https://jitpack.io/#jitpack/nosql-data-cache/1.0.0</url>
+	<licenses>
+		<license>
+			<name>The MIT License (MIT)</name>
+			<url>https://github.com/ledwinson/nosql-data-cache/blob/master/LICENSE</url>
+		</license>
+	</licenses>
 
-	<repositories>
+	<developers>
+		<developer>
+			<name>Lyju Edwinson</name>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git@github.com:ledwinson/nosql-data-cache.git</connection>
+		<developerConnection>scm:git:git@github.com:ledwinson/nosql-data-cache.git</developerConnection>
+		<url>git@github.com:ledwinson/nosql-data-cache.git</url>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<id>jitpack.io</id>
-			<url>https://jitpack.io</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
-	</repositories>
+	</distributionManagement>
 
 	<properties>
 		<!-- Generic properties -->
@@ -36,10 +58,6 @@
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 	</properties>
 
-	<organization>
-		<name>Superchoice Pty Ltd</name>
-		<url>http://www.superchoice.com.au</url>
-	</organization>
 
 	<dependencies>
 		<!-- Spring and Transactions -->
@@ -122,44 +140,75 @@
 	</dependencies>
 
 	<build>
-    <plugins>
-    
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.2</version>
-        <configuration> <!-- Compile java 7 compatible bytecode -->
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-      
-      <plugin>  <!-- Create sources.jar -->
-            <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-      </plugin>
-            
-      <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-      </plugin>
-    </plugins>
-  </build>
-  
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration> <!-- Compile java 7 compatible bytecode -->
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<stagingProfileId>19375019933d12</stagingProfileId>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
 </project>
