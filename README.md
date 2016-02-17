@@ -102,5 +102,6 @@ Note: I am in the process of uploading this to maven central. For the time being
     
     `private Collection<Membership> getTestData() {`
         `final List<Membership> members = csvUtil.getmembers();`
+        return members;
     `}`
     `}`
