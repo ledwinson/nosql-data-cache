@@ -21,8 +21,6 @@ With 200K records in cache to look up all records with five look up queries, it 
 
 Java version: JDK 7 or above. 
 
-Note: I am in the process of uploading this to maven central. For the time being you can check out the project and build it locally as mvn package.
-
            <dependency>
 			<groupId>com.github.ledwinson</groupId>
 			<artifactId>nosql-data-cache</artifactId>
