@@ -28,7 +28,7 @@ Java version: JDK 7 or above.
 		</dependency>
 
 ### Test it before using it and see how it fits to your use case.
-  This cache mainly depedens on two things, 
+  This cache mainly depedents on two things, 
   1) one is the data and 
   2) second is the look up queries.   
   
