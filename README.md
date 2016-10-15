@@ -53,57 +53,6 @@ Java version: JDK 7 or above.
         SampleDataSource is the implementation of DataSourceResolver<T> interface that can read a file [or database] and create a collection of membership objects. 
     
 ### Once the data is loaded the snapshot can be obtained. You can call this method any time, this is a blocking call.
-`final TestSnapshot snapshot = cacheService.getSnapshot();`
-
-### That's all, now look up your specific data,
-`final Membership memberFromCache = snapshot.findByMemberNumberAndTfn(1234, 10);`
-
- //release snapshot after done with it.
- `snapshot.release();`
-
-### TestSnapshot interface
-
-`import java.util.Date;`
-`import java.util.List;`
-
-`import le.cache.bis.services.Snapshot;`
-`import le.cache.bis.services.impl.data.Membership;`
-`import le.cache.util.Property;`
-`public interface TestSnapshot extends Snapshot {`
-
-    // TI am sure there is pnly one record for this query and employee is an entity liked with membership entity.
-    `Membership findByMemberNumberAndTfnAndDob(@Property("memberNumber") String memberNumber, `
-            `@Property("superFundGenEmprId") String tfn, @Property(value = "dob", on = "employee") Date dob);`
-
-    
-    `Membership findByMemberNumberAndTfnForEmployer(@Property("memberNumber") String memberNumber,  @Property("superFundGenEmprId") String tfn);`
-    
-    //expecting multiple results.
-    `List<Membership> findByMemberNumberAndTfnForEmployerForDuplicates(@Property("memberNumber") String memberNumber,  @Property("superFundGenEmprId") String tfn);`
-`}`
-
-
-## SampleDataResolver Class
-
-`public class SampleDataSource implements DataSourceResolver<Membership>{`
-    `private final int size;`
-    
-    `public SampleDataSource(int size) {`
-        `this.size = size;`
-    `}`
-        
-    `@Override`
-    `public Collection<Membership> load() {`
-        `return getTestData();`
-    `}`
-    
-    `private Collection<Membership> getTestData() {`
-        `final List<Membership> members = csvUtil.getmembers();`
-        return members;
-    `}`
-    `}`
-
-
 
 ##Why should I use this? Why can't I leverage from existing cache technologies?
   
