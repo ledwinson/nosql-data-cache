@@ -39,9 +39,9 @@ Java version: JDK 7 or above.
 ### Step1 Inject the cache dependency.
 
     `@Autowired`
-    `private CacheService<Membership, TestSnapshot, Long> cacheService;`
+    `private CacheService<Student, TestSnapshot, Long> cacheService;`
     
-    Here Membership is the entity [or DTO] for my data, TestSnapshot is the interface with look up queries and Long is the data type of primary key. Note that here I loaded data from CSV file and there is no primary key associated with it, so a Long field is created [memberId] and just incremented the numbers.
+    Here Student is the entity [or DTO] for my data, TestSnapshot is the interface with look up queries and Long is the data type of primary key. Note that here I loaded data from CSV file and there is no primary key associated with it, so a Long field is created [rollnumber] and just incremented the numbers.
     
 ###  Load the complete data required to do the look up.
 
