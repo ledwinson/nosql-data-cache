@@ -45,7 +45,7 @@ Java version: JDK 7 or above.
     
 ###  Load the complete data required to do the look up.
 
-        `final PrimaryKeyType<Long> keyType = new PrimaryKeyType<Long>(Long.class, "memberId", Membership.class);`
+        `final PrimaryKeyType<Long> keyType = new PrimaryKeyType<Long>(Long.class, "rolnumber", Student.class);`
         `final int hundred = 100;`
         `cacheService.cache(new SampleDataSource(hundred ), false, keyType , TestSnapshot.class);`
         
