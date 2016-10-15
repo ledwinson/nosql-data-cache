@@ -34,7 +34,7 @@ Java version: JDK 7 or above.
   The data can be loaded to cache by passing an implementation of DataSourceResolver<T>.  
   The lookup queries can be declared in an interface exting from Snapshot interface. The method names must start with findBy
 
-### As an example here I am loading data from a CSV file convert it to member obejcts and trying to look up members based on the queries defined in test snapshot.
+### As an example here I am loading data from a CSV file convert it to student obejcts and trying to look up students based on the queries defined in test snapshot.
 
 ### Step1 Inject the cache dependency.
 
